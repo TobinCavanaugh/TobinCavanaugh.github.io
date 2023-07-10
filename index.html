@@ -1,16 +1,120 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<button class="dropdown-btn">Menu</button>
-<div class="dropdown-content">
-    <a href="#">Item 1</a>
-    <a href="#">Item 2</a>
-    <a href="#">Item 3</a>
-</div>
+<style>
+    
+    :root {
+        --inset: 30px;
+        --font: "Courier", monospace;
+    }
 
-<script src="script.js"></script>
-</body>
-</html>
+    
+	body {
+		background-color: black;
+    	color: #ffbf00;
+		margin: 0;
+		padding: 0;
+		}
+  
+	body::after {
+		content: "";
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		width: 100%;
+  		height: 100%;
+  		background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2) 3px, transparent 1px);
+	  background-size: 100% 5px; /* Adjust the height of the scanlines as desired */
+      pointer-events: none;
+        animation: scanlines 2s linear infinite;
+    }
+
+    @keyframes scanlines {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 0 +50px; /* Adjust the value to control the scrolling speed */
+        }
+    }
+    
+    
+    a {
+    	color: #ffbf00; 
+		text-decoration: underlined;
+	}
+    
+	summary {
+		list-style: none;
+        font-family: var(--font);
+	}
+  
+	header {
+		list-style: none;
+		font-family: var(--font);
+		font-size: 50px;
+	}
+
+	summary::before {
+		content: "[>]";
+    	font-weight: bold;
+    	float: left;
+    	margin-right: 5px;
+    	font-family: var(--font);
+	}
+
+	details[open] summary::before {
+		content: "[V]";
+	}
+    
+    details[open]{
+    	font-weight: bold;
+    }
+    
+    /*
+    h2::before{
+    ⭟ ⤹ ↳ ⮑ ⮱ ↪  ⮎ ⇲ ⬑ " "
+    	content: "  --";
+    }
+    */
+  
+	h2 {
+		list-style: none;
+    	font-family: var(--font);
+    	font-size: 30px;
+    	font-weight: normal;
+    	margin-top: 5px; /* Adjust the top margin as needed */
+    	margin-bottom: 10px; /* Adjust the bottom margin as needed */
+    	 padding-left: var(--inset); /* Adjust the left padding as needed */
+    	padding-right: 10px; /* Adjust the right padding as needed */
+	}
+    
+    p{
+        padding-left: var(--inset); /* Adjust the left padding as needed */
+    }
+    
+
+     /* Indenting images */
+  img.fit-width {
+    margin-left: var(--inset);
+  }
+  
+</style>
+
+<header>
+Portfolio
+</header>
+
+<details>
+  <summary> [Item 0 - Pure C Strings]:</summary>
+  <hr> <!-- horizontal line -->
+  <h2><a href="https://github.com/TobinCavanaugh/Pure-C-Strings">Pure C Strings</a></h2>
+  <p>BBB</p>
+  
+  <img class="fit-width" src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="400"/>
+    <hr> <!-- horizontal line -->
+    
+</details>
+
+<details>
+  <summary> [Item 1 - Pure C Strings]:</summary>
+  <hr> <!-- horizontal line -->
+  
+</details>
