@@ -1,8 +1,13 @@
+
 <style>
-    
+    @import url('https://fonts.googleapis.com/css?family=VT323');
+
     :root {
         --inset: 30px;
-        --font: "Courier", monospace;
+        --font: "VT323", monospace;
+        --amber: #ffbf00;
+        --bloomAmt: 2px;
+        /*Courier New*/
     }
 
     
@@ -12,6 +17,12 @@
 		margin: 0;
 		padding: 0;
 		}
+        
+	body, body * {
+    	text-shadow: var(--bloomAmt) var(--bloomAmt) 10px var(--amber);
+	}
+
+        
   
 	body::after {
 		content: "";
@@ -37,7 +48,7 @@
     
     
     a {
-    	color: #ffbf00; 
+    	color: var(--amber); 
 		text-decoration: underlined;
 	}
     
