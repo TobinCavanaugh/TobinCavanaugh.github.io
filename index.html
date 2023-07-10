@@ -13,6 +13,7 @@
         --font: 'Modern DOS', monospace;
         --amber: #ffbf00;
         --amberTransp: rgba(255, 191, 0, .4);
+        --amberTranspImage: rgba(255, 191, 0, .2);
 		--amberTranspBorder: rgba(255, 191, 0, .7);
 		--bloomOff: 4px;
         --bloomAmt: 30px;
@@ -38,18 +39,18 @@
         var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTransp),
 		var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTransp);
 	}
-  
+
 body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 4px, transparent 5px, transparent 7px, rgba(0, 0, 0, .1) 8px);
-  background-size: 100% 8px; /* Adjust the height of the scanlines as desired */
-  pointer-events: none;
-  animation: scanlines 2s linear infinite;
+    content: "";
+    position: fixed; /* Change position to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 4px, transparent 5px, transparent 7px, rgba(0, 0, 0, .1) 8px);
+    background-size: 100% 8px; /* Adjust the height of the scanlines as desired */
+    pointer-events: none;
+    animation: scanlines 2s linear infinite;
 }
 
 
@@ -138,10 +139,18 @@ body::after {
 
     }
     
+  img {
+    margin-left: calc(2 * var(--inset));
+    border: 4px solid var(--amber);
+    		
+            --negative-offset: calc(-1 * var(--bloomOff));
 
-     /* Indenting images */
-  img.fit-width {
-    margin-left: var(--inset);
+    	box-shadow: 
+        var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
+		var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
+        var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage),
+		var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage);
+
   }
   
 </style>
@@ -170,8 +179,6 @@ Portfolio
     - If weird stuff is happening and you need to see whats getting malloced before the crash, set PureStringDoLogging equal to 1, and this will print out all the mallocs I do, as well as their size or if its running out of memory.  <br><br>
     
 </blockquote>
-
-
 
 	<img class="fit-width" src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="300"/>
 	<hr>
