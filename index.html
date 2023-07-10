@@ -25,6 +25,7 @@
     	color: var(--amber);
 		margin: 0;
 		padding: 0;
+        font-family: var(--font);
 		}
         
 	body, body * {
@@ -94,11 +95,12 @@ body::after {
     	font-weight: bold;
     }
     
-    
+    /*
     h2::before{
     ⭟ ⤹ ↳ ⮑ ⮱ ↪  ⮎ ⇲ ⬑ " "
     	content: "⇲";
     }
+    */
     
   
 	h2 {
@@ -114,6 +116,13 @@ body::after {
     
     p{
         padding-left: var(--inset); /* Adjust the left padding as needed */
+        font-family: var(--font);
+    }
+    
+	blockquote{
+        padding-left: var(--inset); /* Adjust the left padding as needed */
+        font-family: var(--font);
+        font-weight: normal;
     }
     
     hr{
@@ -142,13 +151,30 @@ Portfolio
 </header>
 
 <details>
-  <summary> [Item 0 - Pure C Strings]:</summary>
-  <hr>
-  <h2><a href="https://github.com/TobinCavanaugh/Pure-C-Strings">Pure C Strings</a></h2>
-  <p>BBB</p>
-  
-  <img class="fit-width" src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="400"/>
-    <hr>
+	<summary> [Item 0 - Pure C Strings]:</summary>
+	<hr>
+	<h2><a href="https://github.com/TobinCavanaugh/Pure-C-Strings">Pure C Strings</a></h2>
+	<p>A simple .c and .h file for making mutable strings in pure C</p>
+  	
+    <blockquote> 
+    
+- Pure C Strings using char arrays inside of a special struct named PureString. <br><br>
+
+
+- The main concept is to create a system of easy to mutate strings, that is reasonably quick and effective. <br><br>
+
+
+    - Everything has been manually tested, though NOT unit tested. I am aware of some bugs surrounding the PureString_Replace method, and its also dirt slow, so be wary with that one. PureString_ReplaceChar is plenty fast though. <br><br>
+    
+    
+    - If weird stuff is happening and you need to see whats getting malloced before the crash, set PureStringDoLogging equal to 1, and this will print out all the mallocs I do, as well as their size or if its running out of memory.  <br><br>
+    
+</blockquote>
+
+
+
+	<img class="fit-width" src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="300"/>
+	<hr>
     
 </details>
 
