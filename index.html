@@ -1,39 +1,55 @@
 
 <style>
-    @import url(//fonts.googleapis.com/css?family=VT323:300,500);
+    @import url(//fonts.googleapis.com/css?family=VT323);
+
+    @font-face {
+        font-family: 'Modern DOS', monospace;
+        src: url("https://github.com/TobinCavanaugh/TobinCavanaugh.github.io/blob/main/ModernDOS8x8.ttf") format('truetype');
+        font-weight: "bold";
+    }
 
     :root {
         --inset: 30px;
-        --font: "VT323", monospace;
+        --font: 'Modern DOS', monospace;
         --amber: #ffbf00;
-        --bloomAmt: 2px;
+        --amberTransp: rgba(255, 191, 0, .4);
+		--bloomOff: 4px;
+        --bloomAmt: 30px;
         /*Courier New*/
     }
 
     
 	body {
 		background-color: black;
-    	color: #ffbf00;
+    	color: var(--amber);
 		margin: 0;
 		padding: 0;
 		}
         
 	body, body * {
-    	text-shadow: var(--bloomAmt) var(--bloomAmt) 10px var(--amber);
+    
+		--negative-offset: calc(-1 * var(--bloomOff));
+
+    	text-shadow: 
+        var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTransp),
+		var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTransp),
+        var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTransp),
+		var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTransp);
 	}
   
-	body::after {
-		content: "";
-  		position: absolute;
-  		top: 0;
-  		left: 0;
-  		width: 100%;
-  		height: 100%;
-  		background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 3px, transparent 5px);
-	  background-size: 100% 12px; /* Adjust the height of the scanlines as desired */
-      pointer-events: none;
-        animation: scanlines 2s linear infinite;
-    }
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 4px, transparent 5px, transparent 7px, rgba(0, 0, 0, .1) 8px);
+  background-size: 100% 8px; /* Adjust the height of the scanlines as desired */
+  pointer-events: none;
+  animation: scanlines 2s linear infinite;
+}
+
 
     @keyframes scanlines {
         0% {
@@ -77,12 +93,12 @@
     	font-weight: bold;
     }
     
-    /*
+    
     h2::before{
     ⭟ ⤹ ↳ ⮑ ⮱ ↪  ⮎ ⇲ ⬑ " "
-    	content: "  --";
+    	content: "⇲";
     }
-    */
+    
   
 	h2 {
 		list-style: none;
