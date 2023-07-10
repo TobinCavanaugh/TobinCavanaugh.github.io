@@ -69,33 +69,34 @@ body::after {
 		text-decoration: underlined;
 	}
     
-	summary {
-		list-style: none;
-        font-family: var(--font);
-	}
+
   
 	header {
 		list-style: none;
 		font-family: var(--font);
 		font-size: 50px;
 	}
-
+	summary {
+		list-style: none;
+        font-family: var(--font);
+	}
+    
 	summary::before {
 		content: "[>]";
-    	font-weight: bold;
+    	font-weight: normal;
     	float: left;
     	margin-right: 5px;
-    	font-family: var(--font);
 	}
 
 	details[open] summary::before {
 		content: "[V]";
 	}
     
-    details[open]{
+    details[open] summary{
     	font-weight: bold;
+        background-color: var(--amberTransp)
     }
-    
+
     /*
     h2::before{
     ⭟ ⤹ ↳ ⮑ ⮱ ↪  ⮎ ⇲ ⬑ " "
@@ -118,6 +119,8 @@ body::after {
     p{
         padding-left: var(--inset); /* Adjust the left padding as needed */
         font-family: var(--font);
+		font-weight: bold;
+        font-style: italic;
     }
     
 	blockquote{
