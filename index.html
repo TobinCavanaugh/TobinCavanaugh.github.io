@@ -81,6 +81,11 @@ body::after {
         font-family: var(--font);
 	}
     
+	summary:hover {
+  		background-color: var(--amberTransp);
+  		color: var(--amber);
+	}
+    
 	summary::before {
 		content: "[>]";
     	font-weight: normal;
@@ -91,10 +96,17 @@ body::after {
 	details[open] summary::before {
 		content: "[V]";
 	}
-    
+
     details[open] summary{
     	font-weight: bold;
         background-color: var(--amberTransp)
+    }
+    
+    h2:hover{
+    
+      	background-color: var(--amberTransp);
+  		color: var(--amber);
+
     }
 
     /*
