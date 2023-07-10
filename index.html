@@ -1,5 +1,6 @@
+
 <style>
-    @import url('https://fonts.googleapis.com/css?family=VT323');
+    @import url(//fonts.googleapis.com/css?family=VT323);
 
     :root {
         --inset: 30px;
@@ -20,8 +21,6 @@
 	body, body * {
     	text-shadow: var(--bloomAmt) var(--bloomAmt) 10px var(--amber);
 	}
-
-        
   
 	body::after {
 		content: "";
@@ -30,8 +29,8 @@
   		left: 0;
   		width: 100%;
   		height: 100%;
-  		background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2) 3px, transparent 1px);
-	  background-size: 100% 5px; /* Adjust the height of the scanlines as desired */
+  		background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 3px, transparent 5px);
+	  background-size: 100% 12px; /* Adjust the height of the scanlines as desired */
       pointer-events: none;
         animation: scanlines 2s linear infinite;
     }
