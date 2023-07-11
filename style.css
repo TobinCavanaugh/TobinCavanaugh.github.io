@@ -15,8 +15,10 @@
     --amberTranspBorder: rgba(255, 191, 0, .7);
     --bloomOff: 4px;
     --bloomAmt: 30px;
+    --fontSize: 75;
     /*Courier New*/
 }
+
 
 body {
     background-color: black;
@@ -125,12 +127,19 @@ a {
 header {
     list-style: none;
     font-family: var(--font);
-    font-size: 50px;
+    font-size: var(--fontSize);
 }
+
+/*@media (max-width: 767px) {*/
+/*    header {*/
+/*        font-size: 50px;*/
+/*    }*/
+/*}*/
 
 summary {
     list-style: none;
     font-family: var(--font);
+    font-size:  50px;
 }
 
 summary:hover {
@@ -142,8 +151,9 @@ summary::before {
     content: "[>]";
     font-weight: normal;
     float: left;
-    margin-right: 5px;
+    /*margin-right: 5px;*/
 }
+
 
 details[open] summary::before {
     content: "[V]";
@@ -155,12 +165,9 @@ details[open] summary {
 }
 
 
-
 h2:hover {
-
     background-color: var(--amberTransp);
     color: var(--amber);
-
 }
 
 /*
@@ -200,7 +207,7 @@ hr {
     var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTranspBorder);
 }
 
-blockquote{
+blockquote {
     animation: typing 4s steps(40) infinite;
 }
 
@@ -236,7 +243,7 @@ img {
     border: 2px solid var(--amber);
     color: var(--amber);
     background-color: black;
-    font-size: 16px;
+    font-size: var(calc(--fontSize * 1))px;
     cursor: pointer;
 
     box-shadow: var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
