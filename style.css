@@ -7,7 +7,7 @@
 }
 
 :root {
-    --inset: 30px;
+    --indent: 30px;
     --font: 'Modern DOS', monospace;
     --amber: #ffbf00;
     --amberTransp: rgba(255, 191, 0, .4);
@@ -139,7 +139,7 @@ header {
 summary {
     list-style: none;
     font-family: var(--font);
-    font-size:  50px;
+    font-size: 50px;
 }
 
 summary:hover {
@@ -151,9 +151,16 @@ summary::before {
     content: "[>]";
     font-weight: normal;
     float: left;
-    /*margin-right: 5px;*/
 }
 
+
+summary{
+    cursor: grab;
+}
+
+details{
+    margin-left: var(--indent);
+}
 
 details[open] summary::before {
     content: "[V]";
@@ -161,9 +168,8 @@ details[open] summary::before {
 
 details[open] summary {
     font-weight: bold;
-    background-color: var(--amberTransp)
+    background-color: var(--amberTransp);
 }
-
 
 h2:hover {
     background-color: var(--amberTransp);
@@ -179,19 +185,24 @@ h2::before{
 
 
 h2 {
-    padding-left: var(--inset);
+    padding-left: var(--indent);
 }
 
+.s-offset{
+    margin-top: 20px;
+    margin-right: -2px;
+    offset: top
+}
 
 p {
-    padding-left: var(--inset); /* Adjust the left padding as needed */
+    padding-left: var(--indent); /* Adjust the left padding as needed */
     font-family: var(--font);
     font-weight: bold;
     font-style: italic;
 }
 
 blockquote {
-    padding-left: var(--inset); /* Adjust the left padding as needed */
+    padding-left: var(--indent); /* Adjust the left padding as needed */
     font-family: var(--font);
     font-weight: normal;
 }
@@ -221,12 +232,10 @@ blockquote {
 /* }*/
 
 
-img {
-    margin-left: calc(2 * var(--inset));
+.custom-img {
+    margin-left: calc(2 * var(--indent));
     border: 4px solid var(--amber);
-
     --negative-offset: calc(-1 * var(--bloomOff));
-
     box-shadow: var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
     var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
     var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage),
@@ -243,7 +252,7 @@ img {
     border: 2px solid var(--amber);
     color: var(--amber);
     background-color: black;
-    font-size: var(calc(--fontSize * 1))px;
+    font-size: var(calc(--fontSize * 1)) px;
     cursor: pointer;
 
     box-shadow: var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),

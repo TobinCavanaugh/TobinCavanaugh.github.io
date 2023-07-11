@@ -33,22 +33,28 @@ function idleHum() {
     }
 }
 
+// Define the custom element
+class DImg extends HTMLElement {
+    constructor() {
+        super();
 
-const blockquoteElements = document.querySelectorAll("blockquote");
+        // Create a shadow root
+        const shadow = this.attachShadow({ mode: 'open' });
 
-blockquoteElements.forEach((blockquote, index) => {
-    const text = blockquote.textContent.trim();
-    let currentIndex = 0;
+        // Create an <img> element
+        const img = document.createElement('img');
 
-    function typeText() {
-        blockquote.textContent = text.slice(0, currentIndex);
-        currentIndex++;
-        if (currentIndex <= text.length) {
-            setTimeout(typeText, 100); // Adjust the delay to control the typing speed
+        // Copy the attributes from <dimg> to <img>
+        const attributes = this.attributes;
+        for (let i = 0; i < attributes.length; i++) {
+            const { name, value } = attributes[i];
+            img.setAttribute(name, value);
         }
-    }
 
-    setTimeout(() => {
-        typeText(); // Call the function to start the typing effect
-    }, index * 1000); // Adjust the delay between each blockquote (in milliseconds)
-});
+        // Append the <img> element to the shadow root
+        shadow.appendChild(img);
+    }
+}
+
+// Define the custom element tag name
+customElements.define('dimg', DImg);
