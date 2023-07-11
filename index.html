@@ -1,206 +1,53 @@
-
-<style>
-    @import url(//fonts.googleapis.com/css?family=VT323);
-
-    @font-face {
-        font-family: 'Modern DOS', monospace;
-        src: url("https://github.com/TobinCavanaugh/TobinCavanaugh.github.io/blob/main/ModernDOS8x8.ttf") format('truetype');
-        font-weight: "bold";
-    }
-
-    :root {
-        --inset: 30px;
-        --font: 'Modern DOS', monospace;
-        --amber: #ffbf00;
-        --amberTransp: rgba(255, 191, 0, .4);
-        --amberTranspImage: rgba(255, 191, 0, .2);
-		--amberTranspBorder: rgba(255, 191, 0, .7);
-		--bloomOff: 4px;
-        --bloomAmt: 30px;
-        /*Courier New*/
-    }
-
-    
-	body {
-		background-color: black;
-    	color: var(--amber);
-		margin: 0;
-		padding: 0;
-        font-family: var(--font);
-		}
-        
-	body, body * {
-    
-		--negative-offset: calc(-1 * var(--bloomOff));
-
-    	text-shadow: 
-        var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTransp),
-		var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTransp),
-        var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTransp),
-		var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTransp);
-	}
-
-body::after {
-    content: "";
-    position: fixed; /* Change position to fixed */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 4px, transparent 5px, transparent 7px, rgba(0, 0, 0, .1) 8px);
-    background-size: 100% 8px; /* Adjust the height of the scanlines as desired */
-    pointer-events: none;
-    animation: scanlines 2s linear infinite;
-}
-
-
-    @keyframes scanlines {
-        0% {
-            background-position: 0 0;
-        }
-        100% {
-            background-position: 0 +50px; /* Adjust the value to control the scrolling speed */
-        }
-    }
-    
-    
-    a {
-    	color: var(--amber); 
-		text-decoration: underlined;
-	}
-    
-
-  
-	header {
-		list-style: none;
-		font-family: var(--font);
-		font-size: 50px;
-	}
-	summary {
-		list-style: none;
-        font-family: var(--font);
-	}
-    
-	summary:hover {
-  		background-color: var(--amberTransp);
-  		color: var(--amber);
-	}
-    
-	summary::before {
-		content: "[>]";
-    	font-weight: normal;
-    	float: left;
-    	margin-right: 5px;
-	}
-
-	details[open] summary::before {
-		content: "[V]";
-	}
-
-    details[open] summary{
-    	font-weight: bold;
-        background-color: var(--amberTransp)
-    }
-    
-    h2:hover{
-    
-      	background-color: var(--amberTransp);
-  		color: var(--amber);
-
-    }
-
-    /*
-    h2::before{
-    ⭟ ⤹ ↳ ⮑ ⮱ ↪  ⮎ ⇲ ⬑ " "
-    	content: "⇲";
-    }
-    */
-  
-
-	h2{
-      padding-left: var(--inset);
-	}
-
-
-    p{
-        padding-left: var(--inset); /* Adjust the left padding as needed */
-        font-family: var(--font);
-		font-weight: bold;
-        font-style: italic;
-    }
-    
-	blockquote{
-        padding-left: var(--inset); /* Adjust the left padding as needed */
-        font-family: var(--font);
-        font-weight: normal;
-    }
-    
-    hr{
-    	border: 2px solid var(--amber);
-        
-		--negative-offset: calc(-1 * var(--bloomOff));
-
-    	box-shadow: 
-        var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspBorder),
-		var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTranspBorder),
-        var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTranspBorder),
-		var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTranspBorder);
-
-    }
-    
-  img {
-    margin-left: calc(2 * var(--inset));
-    border: 4px solid var(--amber);
-    		
-            --negative-offset: calc(-1 * var(--bloomOff));
-
-    	box-shadow: 
-        var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
-		var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
-        var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage),
-		var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage);
-
-  }
-  
-
-  
-</style>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+<div class="bg"></div>
 
 <header>
-Portfolio
+    Portfolio
 </header>
 
-<details>
-	<summary> [Item 0 - Pure C Strings]:</summary>
-	<hr>
+<button class="top-right-button" onclick="idleHum()">Enable Sound (Recommended)</button>
+
+<details onclick="playSound('click')" onmouseover="playSound('hoverclick')">
+
+    <summary> [Item 0 - Pure C Strings]: </summary>
+
+    <hr style="border:none; border-top: 3px solid var(--amber)">
+
     <h2>
-    <a href="https://github.com/TobinCavanaugh/Pure-C-Strings">Pure C Strings</a>   
+        <a href="https://github.com/TobinCavanaugh/Pure-C-Strings">Pure C Strings</a>
     </h2>
 
-	<p>A simple .c and .h file for making mutable strings in pure C</p>
-  	
-    <blockquote> 
-    
-- Pure C Strings using char arrays inside of a special struct named PureString. <br><br>
+    <p>A simple .c and .h file for making mutable strings in pure C</p>
+
+    <blockquote id="fallout-blockquote">
+
+        - Pure C Strings using char arrays inside of a special struct named PureString. <br><br>
 
 
-- The main concept is to create a system of easy to mutate strings, that is reasonably quick and effective. <br><br>
+        - The main concept is to create a system of easy to mutate strings, that is reasonably quick and effective. <br><br>
 
 
-    - Everything has been manually tested, though NOT unit tested. I am aware of some bugs surrounding the PureString_Replace method, and its also dirt slow, so be wary with that one. PureString_ReplaceChar is plenty fast though. <br><br>
-    
-    
-    - If weird stuff is happening and you need to see whats getting malloced before the crash, set PureStringDoLogging equal to 1, and this will print out all the mallocs I do, as well as their size or if its running out of memory.  <br><br>
-    
-</blockquote>
+        - Everything has been manually tested, though NOT unit tested. I am aware of some bugs surrounding the
+        PureString_Replace method, and its also dirt slow, so be wary with that one. PureString_ReplaceChar is plenty
+        fast though. <br><br>
 
-	<img class="fit-width" src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="300"/>
-	<hr>
-    
+
+        - If weird stuff is happening and you need to see whats getting malloced before the crash, set
+        PureStringDoLogging equal to 1, and this will print out all the mallocs I do, as well as their size or if its
+        running out of memory. <br><br>
+
+    </blockquote>
+
+    <img class="fit-width"
+         src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="300" alt="Image of header file"/>
+    <hr style="border:none; border-top: 3px solid var(--amber)">
+
+
 </details>
 
-<details>
-  <summary> [Item 1 - Pure C Strings]:</summary>
-  <hr> <!-- horizontal line -->
-  
+<details onclick="playSound('click')" onmouseover="playSound('hoverclick')">
+    <summary> [Item 1 - Pure C Strings]:</summary>
+    <hr style="border:none; border-top: 3px solid var(--amber)">
+
 </details>
