@@ -9,7 +9,7 @@
 
 <!-- <button class="top-right-button" onclick="idleHum()"> </button>  !-->
 
-<img class="top-right-button" onclick="idleHum()" src="Speaker_Icon.png" width=40em>
+<img class="top-right-button" onclick="idleHum(); toggleIcon(this, 'Speaker_Icon.png','Mute_Icon.png')" src="Mute_Icon.png" width=40em>
 
 <details onclick="playSound('click')" onmouseover="playSound('hoverclick')">
 
@@ -43,7 +43,7 @@
     </blockquote>
 
     <img class="fit-width custom-img"
-         src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="300"
+         src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="300" loading="lazy"
          alt="Image of header file"
     />
     <hr style="border:none; border-top: 0.4vh solid var(--amber)">

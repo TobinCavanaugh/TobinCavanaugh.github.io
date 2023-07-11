@@ -14,6 +14,7 @@ function playSound(s) {
     audio.play();
 }
 
+
 var myAudio; // Declare the audio variable outside the function
 
 function idleHum() {
@@ -30,5 +31,13 @@ function idleHum() {
         myAudio.play();
     } else {
         myAudio.pause();
+    }
+}
+
+function toggleIcon(imageElement, path1, path2) {
+    if(audioEnabled){
+        imageElement.src = path1;
+    } else {
+        imageElement.src = path2;
     }
 }
