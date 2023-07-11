@@ -26,6 +26,11 @@ body {
     font-family: var(--font);
 }
 
+::selection {
+    background-color: var(--amber);
+    color: black;
+}
+
 body, body * {
     --negative-offset: calc(-1 * var(--bloomOff));
 

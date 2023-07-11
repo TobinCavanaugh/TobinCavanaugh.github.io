@@ -7,7 +7,7 @@ function playSound(s) {
     var target = event.target;
 
     test = target.tagName.toLowerCase();
-    if (test !== 'summary' || test === "button") {
+    if (test !== 'summary' && test !== "a") {
         return; // Ignore clicks on the content within the details element
     }
     var audio = new Audio(s + ".wav");
