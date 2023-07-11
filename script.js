@@ -32,29 +32,3 @@ function idleHum() {
         myAudio.pause();
     }
 }
-
-// Define the custom element
-class DImg extends HTMLElement {
-    constructor() {
-        super();
-
-        // Create a shadow root
-        const shadow = this.attachShadow({ mode: 'open' });
-
-        // Create an <img> element
-        const img = document.createElement('img');
-
-        // Copy the attributes from <dimg> to <img>
-        const attributes = this.attributes;
-        for (let i = 0; i < attributes.length; i++) {
-            const { name, value } = attributes[i];
-            img.setAttribute(name, value);
-        }
-
-        // Append the <img> element to the shadow root
-        shadow.appendChild(img);
-    }
-}
-
-// Define the custom element tag name
-customElements.define('dimg', DImg);

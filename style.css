@@ -1,24 +1,35 @@
-@import url(//fonts.googleapis.com/css?family=VT323);
+/*@import url(//fonts.googleapis.com/css?family=VT323);*/
 
+/*
 @font-face {
     font-family: 'Modern DOS', monospace;
     src: url("https://github.com/TobinCavanaugh/TobinCavanaugh.github.io/blob/main/ModernDOS8x8.ttf") format('truetype');
     font-weight: bold;
 }
-
+*/
 :root {
-    --indent: 30px;
+    --indent: 5vw;
     --font: 'Modern DOS', monospace;
     --amber: #ffbf00;
     --amberTransp: rgba(255, 191, 0, .4);
     --amberTranspImage: rgba(255, 191, 0, .2);
     --amberTranspBorder: rgba(255, 191, 0, .7);
-    --bloomOff: 4px;
-    --bloomAmt: 30px;
-    --fontSize: 75;
+    --bloomOff: 4mm;
+    --bloomAmt: 30mm;
+
+    --bloomLine: 20px;
+    --bloomText: 2em;
+
+    /*--fontSize: 75mm;*/
+
+    --headerSize: 8em;
+    --summarySize: 3em;
+
+    --paraSize: 2em;
+    --textSize: 1em;
+
     /*Courier New*/
 }
-
 
 body {
     background-color: black;
@@ -34,17 +45,21 @@ body {
 }
 
 body, body * {
-    --negative-offset: calc(-1 * var(--bloomOff));
+   /*filter: blur(1px);*/
 
-    text-shadow: var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTransp),
-    var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTransp),
-    var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTransp),
-    var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTransp);
+   text-shadow: 0px 0px var(--bloomText) var(--amber),
+   0px 0px var(--bloomText) var(--amber);
 }
+
+
+    /* --negative-offset: calc(-1 * var(--bloomOff));
+    text-shadow: var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTransp), var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTransp), var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTransp), var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTransp);
+    */
 
 body::after {
     content: "";
-    position: fixed; /* Change position to fixed */
+    position: fixed;
+    /* Change position to fixed */
     top: 0;
     left: 0;
     width: 100%;
@@ -52,7 +67,7 @@ body::after {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 4px, transparent 5px, transparent 7px, rgba(0, 0, 0, .1) 8px);
     background-size: 100% 8px;
     pointer-events: none;
-    animation: scanlines 2s linear infinite;
+    animation: scanlines 10s linear infinite;
 }
 
 .bg {
@@ -63,9 +78,9 @@ body::after {
     bottom: -50%;
     width: 200%;
     height: 200vh;
-    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background: transparent url('noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
-    animation: static-noise .2s infinite;
+    animation: static-noise 0.5s infinite;
     opacity: 1;
     visibility: visible;
     pointer-events: none;
@@ -74,37 +89,19 @@ body::after {
 
 @keyframes static-noise {
     0% {
-        transform: translate(0, 0)
+        transform: translate(0, 0);
     }
-    10% {
-        transform: translate(-5%, -5%)
-    }
-    20% {
-        transform: translate(-10%, 5%)
-    }
-    30% {
-        transform: translate(5%, -10%)
-    }
-    40% {
-        transform: translate(-5%, 15%)
+    25% {
+        transform: translate(-10%, 5%);
     }
     50% {
-        transform: translate(-10%, 5%)
+        transform: translate(15%, 0);
     }
-    60% {
-        transform: translate(15%, 0)
-    }
-    70% {
-        transform: translate(0, 10%)
-    }
-    80% {
-        transform: translate(-15%, 0)
-    }
-    90% {
-        transform: translate(10%, 5%)
+    75% {
+        transform: translate(-15%, 0);
     }
     100% {
-        transform: translate(5%, 0)
+        transform: translate(0, 0);
     }
 }
 
@@ -113,21 +110,20 @@ body::after {
         background-position: 0 0;
     }
     100% {
-        background-position: 0 +50px; /* Adjust the value to control the scrolling speed */
+        background-position: -1%;
+        /* Adjust the value to control the scrolling speed */
     }
 }
-
 
 a {
     color: var(--amber);
     text-decoration: underline;
 }
 
-
 header {
     list-style: none;
     font-family: var(--font);
-    font-size: var(--fontSize);
+    font-size: var(--headerSize);
 }
 
 /*@media (max-width: 767px) {*/
@@ -136,11 +132,6 @@ header {
 /*    }*/
 /*}*/
 
-summary {
-    list-style: none;
-    font-family: var(--font);
-    font-size: 50px;
-}
 
 summary:hover {
     background-color: var(--amberTransp);
@@ -150,30 +141,38 @@ summary:hover {
 summary::before {
     content: "[>]";
     font-weight: normal;
-    float: left;
+ /*   float: left; */
 }
 
 
-summary{
-    cursor: grab;
-}
 
-details{
+details {
     margin-left: var(--indent);
+    font-size: var(--textSize);
 }
+
 
 details[open] summary::before {
     content: "[V]";
+}
+
+details[open] summary::after{
+    content: "...";
 }
 
 details[open] summary {
     font-weight: bold;
     background-color: var(--amberTransp);
 }
-
 h2:hover {
     background-color: var(--amberTransp);
     color: var(--amber);
+}
+
+summary {
+    list-style: none;
+    cursor: grab;
+    font-size: var(--summarySize);
 }
 
 /*
@@ -183,81 +182,58 @@ h2::before{
 }
 */
 
-
 h2 {
     padding-left: var(--indent);
 }
 
-.s-offset{
+.s-offset {
     margin-top: 20px;
     margin-right: -2px;
-    offset: top
+    offset: top;
 }
 
 p {
-    padding-left: var(--indent); /* Adjust the left padding as needed */
+    padding-left: var(--indent);
+    /* Adjust the left padding as needed */
     font-family: var(--font);
     font-weight: bold;
     font-style: italic;
 }
 
 blockquote {
-    padding-left: var(--indent); /* Adjust the left padding as needed */
+    padding-left: var(--indent);
+    /* Adjust the left padding as needed */
     font-family: var(--font);
     font-weight: normal;
 }
 
 hr {
     /*border: 2px solid var(--amber);*/
-
-    --negative-offset: calc(-1 * var(--bloomOff));
-
-    box-shadow: var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspBorder),
-    var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTranspBorder),
-    var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTranspBorder),
-    var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTranspBorder);
+    box-shadow: 0px 0px var(--bloomLine) var(--amber);
 }
-
 blockquote {
     animation: typing 4s steps(40) infinite;
 }
-
-/*@keyframes typing {*/
-/*     from {*/
-/*         width: 0;*/
-/*     }*/
-/*     to {*/
-/*         width: 100%;*/
-/*     }*/
-/* }*/
-
-
 .custom-img {
     margin-left: calc(2 * var(--indent));
     border: 4px solid var(--amber);
     --negative-offset: calc(-1 * var(--bloomOff));
-    box-shadow: var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
-    var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
-    var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage),
-    var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage);
+    box-shadow: 0px 0px var(--bloomLine) var(--amber);
 }
-
 /*This is the top right allow sound button*/
 .top-right-button {
     position: fixed;
+
     top: 10px;
     right: 10px;
     padding: 10px;
 
-    border: 2px solid var(--amber);
+    
+    border: 3px solid var(--amber);
     color: var(--amber);
     background-color: black;
-    font-size: var(calc(--fontSize * 1)) px;
+    font-size: var(--textSize);
     cursor: pointer;
 
-    box-shadow: var(--bloomOff) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
-    var(--negative-offset) var(--bloomOff) var(--bloomAmt) var(--amberTranspImage),
-    var(--negative-offset) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage),
-    var(--bloomOff) var(--negative-offset) var(--bloomAmt) var(--amberTranspImage);
+    box-shadow: 0px 0px var(--bloomLine) var(--amber);
 }
-
