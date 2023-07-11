@@ -229,9 +229,10 @@ blockquote {
     box-shadow: 0px 0px var(--bloomLine) var(--amber);
 }
 
+
 /*This is the top right allow sound button*/
 .top-right-button {
-    position: fixed;
+    position: absolute;
 
 
     top: 10px;
@@ -244,7 +245,13 @@ blockquote {
     font-size: var(--paraSize);
     cursor: pointer;
     
-    filter: drop-shadow(0px 0px var(--bloomLine));
+    filter: drop-shadow(0px 0px var(--bloomLine) var(--amber));
 
     /*box-shadow: 0px 0px var(--bloomLine) var(--amber);*/
+}
+
+
+.bg-amber-transp{
+    background-color: var(--amberTranspImage);
+    box-shadow: 0px 0px var(--bloomLine) var(--amber);
 }
