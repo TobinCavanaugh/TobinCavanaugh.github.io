@@ -130,6 +130,7 @@ a {
     color: var(--amber);
     text-decoration: underline;
     font-size: var(--subHeaderSize);
+    white-space: pre;
 }
 
 .line {
@@ -141,7 +142,7 @@ a::after {
     font-size: 0.8em;
     content: "  \f2f5"; /* Use the appropriate Font Awesome icon code */
     font-family: "Font Awesome 5 Free"; /* Specify the Font Awesome font family */
-    white-space: pre; /* Preserve white space, including tabs */
+    /* white-space: pre; Preserve white space, including tabs */
 }
 
 header {
@@ -212,7 +213,8 @@ blockquote {
     padding-left: var(--indent);
     font-weight: normal;
     font-size: var(--paraSize);
-    white-space: pre;
+    /*white-space: pre;*/
+    white-space: pre-line;
 }
 
 hr {
