@@ -13,7 +13,7 @@
 
 <img class="top-right-button" onclick="idleHum(); toggleIcon(this, 'Speaker_Icon.png','Mute_Icon.png')" src="Mute_Icon.png" width=40em>
 
-<details onclick="playSound('click')">
+<details onclick="playSound('click', this)">
 
     <summary onmouseenter="playSound('hoverclick')">C:\Portfolio\PureCStrings\</summary>
 
@@ -26,22 +26,17 @@
     <p>A simple .c and .h file for making mutable strings in pure C</p>
 
     <blockquote>
+        - Pure C Strings using char arrays inside of a special struct named PureString.
 
-        - Pure C Strings using char arrays inside of a special struct named PureString. <br><br>
-
-
-        - The main concept is to create a system of easy to mutate strings, that is reasonably quick and effective. <br><br>
-
+        - The main concept is to create a system of easy to mutate strings, that is reasonably quick and effective.
 
         - Everything has been manually tested, though NOT unit tested. I am aware of some bugs surrounding the
         PureString_Replace method, and its also dirt slow, so be wary with that one. PureString_ReplaceChar is plenty
-        fast though. <br><br>
-
+        fast though.
 
         - If weird stuff is happening and you need to see whats getting malloced before the crash, set
         PureStringDoLogging equal to 1, and this will print out all the mallocs I do, as well as their size or if its
-        running out of memory. <br><br>
-
+        running out of memory.
     </blockquote>
 
     <img class="fit-width custom-img"
@@ -52,7 +47,7 @@
 
 </details>
 
-<details onclick="playSound('click')" onmouseover="playSound('hoverclick')">
+<details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
     <summary onmouseover="playSound('hoverclick')">C:\Portfolio\WindowsSnake\</summary>
     <hr style="border:none; border-top: 0.4vh solid var(--amber)">
 
@@ -70,7 +65,6 @@
 
     <blockquote>
         - I wanted to make a stupid but still functional application using my new knowledge of C. I also wanted to learn more about the C Windows API, and I settled on making a game constructed out of windows. My first thought was tetris, however after I solved the problem of displaying and coloring windows, I realized Tetris is hard to program, and that snake would get the same point across while being much easier to program.
-
     </blockquote>
     <hr style="border:none; border-top: 0.4vh solid var(--amber)">
 

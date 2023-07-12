@@ -1,11 +1,17 @@
 var audioEnabled = false;
 
-function playSound(s) {
+function playSound(s, self = null) {
     if (!audioEnabled) {
         return;
     }
     var target = event.target;
     test = target.tagName.toLowerCase();
+
+    if(s === 'click' && self != null && !self.open){
+        var altAudio = new Audio("hdd.wav");
+        altAudio.volume = .2;
+        altAudio.play();
+    }
 
     if(test === 'summary' || test === 'h2'){
         var audio = new Audio(s + ".wav");
