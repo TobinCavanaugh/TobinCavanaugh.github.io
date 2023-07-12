@@ -47,9 +47,11 @@ function idleHum() {
 function toggleIcon(imageElement, path1, path2) {
     if(audioEnabled){
         imageElement.src = path1;
+        imageElement.alt = path1;
         imageElement.classList.add("bg-amber-transp");
     } else {
         imageElement.src = path2;
+        imageElement.alt = path2;
         imageElement.classList.remove("bg-amber-transp");
     }
 }
