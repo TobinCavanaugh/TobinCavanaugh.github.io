@@ -212,6 +212,7 @@ blockquote {
     padding-left: var(--indent);
     font-weight: normal;
     font-size: var(--paraSize);
+    white-space: pre;
 }
 
 hr {
