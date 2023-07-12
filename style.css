@@ -129,6 +129,13 @@ a {
     text-decoration: underline;
 }
 
+a::after {
+    font-size: 0.8em;
+    content: "  \f2f5"; /* Use the appropriate Font Awesome icon code */
+    font-family: "Font Awesome 5 Free"; /* Specify the Font Awesome font family */
+    white-space: pre; /* Preserve white space, including tabs */
+}
+
 header {
     list-style: none;
     font-family: var(--font);
@@ -149,12 +156,15 @@ summary:hover {
 }
 
 summary::before {
-    content: "[>]";
+    content: "[>] ";
     font-weight: normal;
- /*   float: left; */
+    white-space: pre
 }
 
-
+details[open] summary::before {
+    content: "[V] ";
+    white-space: pre;
+}
 
 details {
     margin-left: var(--indent);
@@ -162,9 +172,7 @@ details {
 }
 
 
-details[open] summary::before {
-    content: "[V]";
-}
+
 
 details[open] summary::after{
     content: "...";

@@ -5,13 +5,17 @@ function playSound(s) {
         return;
     }
     var target = event.target;
-
     test = target.tagName.toLowerCase();
-    if (test !== 'summary' && test !== "a") {
-        return; // Ignore clicks on the content within the details element
+
+    if(test === 'summary' || test === 'h2'){
+        var audio = new Audio(s + ".wav");
+        audio.play();
+
     }
-    var audio = new Audio(s + ".wav");
-    audio.play();
+
+    // if (test !== 'summary' && test !== "a") {
+    //     return; // Ignore clicks on the content within the details element
+    // }
 }
 
 

@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 <div class="centerGradient"></div>
 <div class="bg"></div>
 
@@ -11,13 +13,13 @@
 
 <img class="top-right-button" onclick="idleHum(); toggleIcon(this, 'Speaker_Icon.png','Mute_Icon.png')" src="Mute_Icon.png" width=40em>
 
-<details onclick="playSound('click')" onmouseover="playSound('hoverclick')">
+<details onclick="playSound('click')">
 
-    <summary>C:\Portfolio\PureCStrings\</summary>
+    <summary onmouseenter="playSound('hoverclick')">C:\Portfolio\PureCStrings\</summary>
 
     <hr style="border:none; border-top: 0.4vh solid var(--amber)">
 
-    <h2>
+    <h2 onmouseenter="playSound('hoverclick')">
         <a href="https://github.com/TobinCavanaugh/Pure-C-Strings" onclick="playSound('click')">Pure C Strings</a>
     </h2>
 
@@ -51,7 +53,7 @@
 </details>
 
 <details onclick="playSound('click')" onmouseover="playSound('hoverclick')">
-    <summary>C:\Portfolio\WindowsSnake\</summary>
+    <summary onmouseover="playSound('hoverclick')">C:\Portfolio\WindowsSnake\</summary>
     <hr style="border:none; border-top: 0.4vh solid var(--amber)">
 
     <h2>
