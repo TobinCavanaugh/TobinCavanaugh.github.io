@@ -18,18 +18,18 @@
     --bloomAmt: 30mm;
 
     --bloomLine: 20px;
-    --bloomText: 1em;
+    --bloomText: 1vh;
 
     /*--fontSize: 75mm;*/
 
     /*Actual Header*/
-    --headerSize: 8em;
+    --headerSize: 8vh;
 
     /**/
-    --listSize: 3em;
-    --subHeaderSize: 2em;
-    --subtitleSize: 2em;
-    --paraSize: 1.5em;
+    --listSize: 3vh;
+    --subHeaderSize: 2vh;
+    --subtitleSize: 2vh;
+    --paraSize: 1.5vh;
 
     /*Courier New*/
 }
@@ -230,7 +230,7 @@ hr {
 
 /*This is the top right allow sound button*/
 .top-right-button {
-    position: absolute;
+    position: fixed;
 
     top: 10px;
     right: 10px;
@@ -239,7 +239,6 @@ hr {
     border: 0.04vh solid var(--amber);
     color: var(--amber);
     background-color: black;
-    font-size: var(--paraSize);
     cursor: pointer;
 
     filter: drop-shadow(0px 0px var(--bloomLine) var(--amber));
