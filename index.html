@@ -3,20 +3,67 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <div class="centerGradient"></div>
-<div class="bg"></div>
+<div class="noise-layer"></div>
 
+<!--Main Header-->
 <header>
-    Portfolio
+    Tobin Cavanaugh
 </header>
 
-<!-- <button class="top-right-button" onclick="idleHum()"> </button>  !-->
-
+<!--Mute/Unmute Button-->
 <img class="top-right-button" onclick="idleHum(); toggleIcon(this, 'Icons/Speaker_Icon.png','Icons/Mute_Icon.png')"
      src="Icons/Mute_Icon.png" width=40em>
 
-<details onclick="playSound('click', this)">
 
-    <summary onmouseenter="playSound('hoverclick')">C:\Portfolio\PureCStrings\</summary>
+<!--Upon The Wind-->
+<details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
+    <!----------------------------------------Path Here-->
+    <summary onmouseover="playSound('hoverclick')">UponTheWind</summary>
+    <hr class="line">
+
+    <h2>
+        <!----Git URL -->
+        <a href="https://github.com/TobinCavanaugh/OnAWing" target="_blank"
+           onclick="playSound('click')">Upon The Wind</a>
+        <!------------------------Project Name-->
+
+    </h2>
+
+    <!--Subtitle-------------------------->
+    <p>Play as an ethereal bird recovering its plumage.</p>
+
+    <!--From Git Page-------------->
+    <!--use <blockquote> for text-->
+    <blockquote>- The bird flies to your mouse position, and you must avoid crashing in order to maintain your speed.
+        - It's a chill and zen-style game, without dramatics or chaos.
+    </blockquote>
+
+    <iframe class="fit-width custom-img" src="https://www.youtube.com/embed/iUdTGgjIk0o"></iframe>
+
+    <blockquote>Windows Snake on the desktop:</blockquote>
+
+    <img class="custom-img"
+         src="https://user-images.githubusercontent.com/71297845/209590366-c0d978cd-6c7e-461f-a8c4-3ef65488694e.png"
+         loading="lazy"
+         alt="Image of header file"
+    />
+
+    <p></p>
+
+    <img class="custom-img"
+         src="https://user-images.githubusercontent.com/71297845/209590362-3e08449f-7f7c-49a6-b69a-9c58c1dc2e21.png"
+         loading="lazy"
+         alt="Image of header file"
+    />
+
+    <p></p>
+    <hr class="line">
+</details>
+
+<!--Pure C Strings-->
+<details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
+
+    <summary onmouseenter="playSound('hoverclick')">PureCStrings</summary>
 
     <hr class="line">
 
@@ -27,8 +74,7 @@
 
     <p>A simple .c and .h file for making mutable strings in pure C</p>
 
-    <blockquote>
-        - Pure C Strings using char arrays inside of a special struct named PureString.
+    <blockquote>- Pure C Strings using char arrays inside of a special struct named PureString.
 
         - The main concept is to create a system of easy to mutate strings, that is reasonably quick and effective.
 
@@ -41,8 +87,8 @@
         running out of memory.
     </blockquote>
 
-    <img class="fit-width custom-img"
-         src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" height="300"
+    <img class="custom-img"
+         src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png"
          loading="lazy"
          alt="Image of header file"
     />
@@ -53,8 +99,9 @@
 
 </details>
 
+<!--WINDOWS SNAKE-->
 <details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
-    <summary onmouseover="playSound('hoverclick')">C:\Portfolio\WindowsSnake\</summary>
+    <summary onmouseover="playSound('hoverclick')">WindowsSnake</summary>
     <hr class="line">
 
     <h2>
@@ -64,6 +111,143 @@
 
     <p>Snake but each pixel is its own Windows window, shockingly NOT crossplatform. Windows only!</p>
 
+    <blockquote>- I wanted to make a stupid but still functional application using my new knowledge of C. I also wanted
+        to learn
+        more about the C Windows API, and I settled on making a game constructed out of windows. My first thought was
+        tetris, however after I solved the problem of displaying and coloring windows, I realized Tetris is hard to
+        program, and that snake would get the same point across while being much easier to program.
+    </blockquote>
+
+    <blockquote>Windows Snake on the desktop:</blockquote>
+
+    <img class="custom-img"
+         src="https://github.com/TobinCavanaugh/WindowsSnake/raw/master/desktop.png"
+         loading="lazy"
+         alt="An image of a snake game being played on the desktop"
+    />
+
+    <blockquote>Windows Snake in front of Clion:</blockquote>
+
+    <img class="custom-img"
+         src="https://raw.githubusercontent.com/TobinCavanaugh/WindowsSnake/master/codeimage.png"
+         loading="lazy"
+         alt="An image of a snake game being played over the IDE clion"
+    />
+
+    <p></p>
+    <hr class="line">
+</details>
+
+<!--Open Blend Directory-->
+<details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
+    <!----------------------------------------Path Here-->
+    <summary onmouseover="playSound('hoverclick')">OpenBlendDirectory</summary>
+    <hr class="line">
+
+    <h2>
+        <!----Git URL -->
+        <a href="https://github.com/TobinCavanaugh/Open-Blend-Directory" target="_blank"
+           onclick="playSound('click')">Open Blend Directory</a>
+        <!------------------------Project Name-->
+
+    </h2>
+
+    <!--Subtitle-------------------------->
+    <p>An cross platform addon for Blender that lets you press Alt + Shift + R to open the directory of your save
+        file!</p>
+
+    <!--From Git Page-------------->
+    <!--use <blockquote> for text-->
+    <blockquote>What it does:
+        - Reveal the location of the currently opened blend file in the explorer. On windows and mac, it automatically
+        selects the file as well.
+
+        Motivation:
+        - This is a super basic addon, I just wanted it because I hate having to find the saved directory of my Blender
+        project every time I want to add textures to it.
+
+        Platform Support
+        - This should be cross platform, supporting Windows, Mac, and Linux. I used system commands, so it should be
+        really simple to add support for different operating systems, it's just a matter of what platform.system() gives
+        you.
+    </blockquote>
+
+    <blockquote>Open Blend Directory in action:</blockquote>
+
+    <img class="custom-img"
+         src="https://user-images.githubusercontent.com/71297845/239706698-c150ded9-b676-467e-a1ef-e186d8005d71.gif"
+         loading="lazy"
+         alt="Gif of blender, user presses alt + shift + r and a windows explorer opens"
+    />
+
+    <p></p>
+    <hr class="line">
+</details>
+
+
+
+
+<details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
+    <!----------------------------------------Path Here-->
+    <summary onmouseover="playSound('hoverclick')">FocalPoint</summary>
+    <hr class="line">
+
+    <h2>
+        <!----Git URL -->
+        <a href="https://github.com/TobinCavanaugh/FocalPoint" target="_blank"
+           onclick="playSound('click')">Focal Point</a>
+        <!------------------------Project Name-->
+
+    </h2>
+
+    <!--Subtitle-------------------------->
+    <p>A horror game based around the mechanic of using the scrollwheel to adjust the cameras focal point.</p>
+
+    <!--From Git Page-------------->
+    <!--use <blockquote> for text-->
+    <blockquote>
+        - Trapped in an abandoned mine after the entrance collapsed, you must escape from a wendigo, taking advantage of the tools left behind by the miners.
+
+        - The moment to moment gameplay consists of searching for gas canisters, delivering four of them to the generator, and eventually making your way into the elevator, all while avoiding the horrifying native american legend.
+    </blockquote>
+
+    <blockquote></blockquote>
+    <iframe class="fit-width custom-img" src="https://www.youtube.com/embed/2G8mExau6ww"></iframe>
+    <p></p>
+
+    <img class="custom-img"
+         src="https://github.com/TobinCavanaugh/FocalPoint/raw/main/GithubMarkdown/FocalPointMMGif.gif"
+         loading="lazy"
+         alt="Image of header file"
+    />
+
+
+    <p></p>
+    <hr class="line">
+</details>
+
+<p></p>
+
+
+<!--Prefab-->
+<details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
+    <!----------------------------------------Path Here-->
+    <summary onmouseover="playSound('hoverclick')"></summary>
+    <hr class="line">
+
+    <h2>
+        <!----Git URL -->
+        <a href="" target="_blank"
+           onclick="playSound('click')"></a>
+        <!------------------------Project Name-->
+
+    </h2>
+
+    <!--Subtitle-------------------------->
+    <p>Snake but each pixel is its own Windows window, shockingly NOT crossplatform. Windows only!</p>
+
+    <!--From Git Page-------------->
+    <!--use <blockquote> for text-->
     <blockquote>
         - I wanted to make a stupid but still functional application using my new knowledge of C. I also wanted to learn
         more about the C Windows API, and I settled on making a game constructed out of windows. My first thought was
@@ -71,9 +255,14 @@
         program, and that snake would get the same point across while being much easier to program.
     </blockquote>
 
+    <blockquote>Windows Snake on the desktop:</blockquote>
+
+    <img class="custom-img"
+         src="https://github.com/TobinCavanaugh/WindowsSnake/raw/master/desktop.png"
+         loading="lazy"
+         alt="Image of header file"
+    />
 
     <p></p>
     <hr class="line">
-
-
 </details>

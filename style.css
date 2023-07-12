@@ -17,6 +17,10 @@
     --bloomOff: 4mm;
     --bloomAmt: 30mm;
 
+    --path: "C:\\Portfolio\\";
+
+    --imageScale: 50vh;
+
     --bloomLine: 4vh;
     --bloomText: 4vh;
 
@@ -66,7 +70,7 @@ body::after {
     animation: scanlines 10s linear infinite;
 }
 
-.bg {
+.noise-layer {
     position: fixed;
     top: -50%;
     left: -50%;
@@ -75,7 +79,6 @@ body::after {
     width: 200%;
     height: 200vh;
     background: transparent url('Icons/noise-transparent.png') repeat 0 0;
-    background-repeat: repeat;
     animation: static-noise 0.2s infinite;
     opacity: 1;
     visibility: visible;
@@ -157,22 +160,26 @@ summary:hover {
 }
 
 summary::before {
-    content: "[>] ";
+    content: "[>] " var(--path);
     font-weight: normal;
-    white-space: pre
+    white-space: pre;
 }
 
-details[open] summary::before {
-    content: "[V] ";
-    white-space: pre;
+summary::after {
+    content: "\\";
 }
 
 details {
     margin-left: var(--indent);
 }
 
+details[open] summary::before {
+    content: "[V] " var(--path);
+    white-space: pre;
+}
+
 details[open] summary::after {
-    content: "...";
+    content: "\\...";
 }
 
 details[open] summary {
@@ -226,6 +233,8 @@ hr {
     margin-left: calc(2 * var(--indent));
     border: 4px solid var(--amber);
     box-shadow: 0px 0px var(--bloomLine) var(--amber);
+    width: var(--imageScale);
+    height: calc(var(--imageScale) / 1.77777778);
 }
 
 /*This is the top right allow sound button*/
