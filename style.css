@@ -22,11 +22,14 @@
 
     /*--fontSize: 75mm;*/
 
+    /*Actual Header*/
     --headerSize: 8em;
-    --summarySize: 3em;
 
-    --paraSize: 2em;
-    --textSize: 1em;
+    /**/
+    --listSize: 3em;
+    --subHeaderSize: 2em;
+    --subtitleSize: 2em;
+    --paraSize: 1.5em;
 
     /*Courier New*/
 }
@@ -45,8 +48,8 @@ body {
 }
 
 body, body * {
-   text-shadow: 0px 0px var(--bloomText) var(--amber),
-   0px 0px var(--bloomText) var(--amber);
+    text-shadow: 0px 0px var(--bloomText) var(--amber),
+    0px 0px var(--bloomText) var(--amber);
 }
 
 /* Scanlines */
@@ -71,7 +74,7 @@ body::after {
     bottom: -50%;
     width: 200%;
     height: 200vh;
-    background: transparent url('noise-transparent.png') repeat 0 0;
+    background: transparent url('Icons/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
     animation: static-noise 0.2s infinite;
     opacity: 1;
@@ -80,38 +83,38 @@ body::after {
     zoom: 500%;
 }
 
-.centerGradient{
+.centerGradient {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-  
-    background: radial-gradient(circle, rgba(255,191,0,0.2) 0%, rgba(0,0,0,0.1) 100%);
+
+    background: radial-gradient(circle, rgba(255, 191, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 
 @keyframes static-noise {
     0% {
-      transform: translate(0, 0);
+        transform: translate(0, 0);
     }
     20% {
-      transform: translate(-10%, 5%);
+        transform: translate(-10%, 5%);
     }
     40% {
-      transform: translate(15%, 0);
+        transform: translate(15%, 0);
     }
     60% {
-      transform: translate(-15%, 0);
+        transform: translate(-15%, 0);
     }
     80% {
-      transform: translate(5%, -5%);
+        transform: translate(5%, -5%);
     }
     100% {
-      transform: translate(0, 0);
+        transform: translate(0, 0);
     }
-  }
+}
 
 @keyframes scanlines {
     0% {
@@ -126,6 +129,12 @@ body::after {
 a {
     color: var(--amber);
     text-decoration: underline;
+    font-size: var(--subHeaderSize);
+}
+
+.line {
+    border: none;
+    border-top: 0.4vh solid var(--amber);
 }
 
 a::after {
@@ -137,7 +146,6 @@ a::after {
 
 header {
     list-style: none;
-    font-family: var(--font);
     font-size: var(--headerSize);
     margin-left: 0.2em;
 }
@@ -160,10 +168,9 @@ details[open] summary::before {
 
 details {
     margin-left: var(--indent);
-    font-size: var(--textSize);
 }
 
-details[open] summary::after{
+details[open] summary::after {
     content: "...";
 }
 
@@ -171,6 +178,7 @@ details[open] summary {
     font-weight: bold;
     background-color: var(--amberTransp);
 }
+
 h2:hover {
     background-color: var(--amberTransp);
     color: var(--amber);
@@ -179,11 +187,12 @@ h2:hover {
 summary {
     list-style: none;
     cursor: grab;
-    font-size: var(--summarySize);
+    font-size: var(--listSize);
 }
 
 h2 {
     padding-left: var(--indent);
+    font-size: var(--subtitleSize);
 }
 
 .s-offset {
@@ -194,27 +203,22 @@ h2 {
 
 p {
     padding-left: var(--indent);
-    /* Adjust the left padding as needed */
-    font-family: var(--font);
     font-weight: bold;
     font-style: italic;
+    font-size: var(--subtitleSize);
 }
 
 blockquote {
     padding-left: var(--indent);
-    /* Adjust the left padding as needed */
-    font-family: var(--font);
     font-weight: normal;
-    white-space: pre;
+    font-size: var(--paraSize);
 }
 
 hr {
     /*border: 2px solid var(--amber);*/
     box-shadow: 0px 0px var(--bloomLine) var(--amber);
 }
-blockquote {
-    animation: typing 4s steps(40) infinite;
-}
+
 .custom-img {
     margin-left: calc(2 * var(--indent));
     border: 4px solid var(--amber);
@@ -228,17 +232,17 @@ blockquote {
     top: 10px;
     right: 10px;
     padding: 10px;
-    
+
     border: 0.04vh solid var(--amber);
     color: var(--amber);
     background-color: black;
     font-size: var(--paraSize);
     cursor: pointer;
-    
+
     filter: drop-shadow(0px 0px var(--bloomLine) var(--amber));
 }
 
-.bg-amber-transp{
+.bg-amber-transp {
     background-color: var(--amberTranspImage);
     box-shadow: 0px 0px var(--bloomLine) var(--amber);
 }

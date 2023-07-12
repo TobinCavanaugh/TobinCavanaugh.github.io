@@ -8,13 +8,13 @@ function playSound(s, self = null) {
     test = target.tagName.toLowerCase();
 
     if(s === 'click' && self != null && !self.open){
-        var altAudio = new Audio("hdd.wav");
+        var altAudio = new Audio("Sounds\\" + "hdd.wav");
         altAudio.volume = .2;
         altAudio.play();
     }
 
     if(test === 'summary' || test === 'h2'){
-        var audio = new Audio(s + ".wav");
+        var audio = new Audio("Sounds\\" + s + ".wav");
         audio.play();
 
     }
@@ -31,7 +31,7 @@ function idleHum() {
     audioEnabled = !audioEnabled;
 
     if (audioEnabled) {
-        myAudio = new Audio('hum.wav');
+        myAudio = new Audio('Sounds\\hum.wav');
         myAudio.addEventListener('ended', function () {
             if (audioEnabled) {
                 this.currentTime = 0;
