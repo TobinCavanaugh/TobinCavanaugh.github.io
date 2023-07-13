@@ -21,7 +21,7 @@
 
     --path: "C:\\Portfolio\\";
 
-    --imageScale: 50vh;
+    --imageScale: 50rem;
 
     --bloomLine: 4vh;
     --bloomText: 4vh;
@@ -263,9 +263,9 @@ hr {
 .top-right-button {
     position: fixed;
 
-    top: 10px;
-    right: 10px;
-    padding: 10px;
+    top: 1em;
+    right: 1rem;
+    padding: 1rem;
 
     border: 0.04vh solid var(--amber);
     color: var(--amber);
