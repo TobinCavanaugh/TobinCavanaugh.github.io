@@ -251,6 +251,13 @@ hr {
     aspect-ratio: 16 / 9;
 }
 
+@-moz-document url-prefix() {
+    .custom-gif {
+        filter:blur(1px);
+    }
+}
+
+
 .four-by-three{
     aspect-ratio: 4 / 3;
 }
