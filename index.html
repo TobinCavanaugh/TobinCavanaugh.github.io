@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 
 
-
 <html lang="en">
 
 <head>
     <meta name="viewport" description="Retro CRT amber styled portfolio website for Tobin Cavanaugh"
-    content="Author: Tobin Cavanaugh, Category: Portfolio, ">
-
+          content="Author: Tobin Cavanaugh, Category: Portfolio, ">
 </head>
 
 <link rel="stylesheet" href="style.css">
@@ -27,7 +25,30 @@
 
 <!--Mute/Unmute Button-->
 <img class="top-right-button" onclick="idleHum(); toggleIcon(this, 'Icons/Speaker_Icon.png','Icons/Mute_Icon.png')"
-    src="Icons/Mute_Icon.png" width=40em alt="Image of a muted/unmuted speaker">
+     src="Icons/Mute_Icon.png" width=40em alt="Image of a muted/unmuted speaker">
+
+<!--About Me-->
+<details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
+    <!----------------------------------------Path Here-->
+    <summary onmouseover="playSound('hoverclick')">AboutMe</summary>
+    <hr class="line">
+
+    <h2>
+        <!----Git URL -->
+        <a href="https://github.com/TobinCavanaugh" target="_blank" onclick="playSound('click')">My Github</a>
+        <!------------------------Project Name-->
+    </h2>
+    <div id="text-container"></div>
+    <script>
+        // URL of the text file
+        const textFileURL = 'https://raw.githubusercontent.com/TobinCavanaugh/TobinCavanaugh/main/README.md';
+
+        loadMd(textFileURL);
+    </script>
+
+    <p></p>
+    <hr class="line">
+</details>
 
 
 <!--Upon The Wind-->
@@ -58,14 +79,14 @@
     <blockquote>Windows Snake on the desktop:</blockquote>
 
     <img class="custom-img"
-        src="https://user-images.githubusercontent.com/71297845/209590366-c0d978cd-6c7e-461f-a8c4-3ef65488694e.png"
-        loading="lazy" alt="Image of header file" />
+         src="https://user-images.githubusercontent.com/71297845/209590366-c0d978cd-6c7e-461f-a8c4-3ef65488694e.png"
+         loading="lazy" alt="Image of header file"/>
 
     <p></p>
 
     <img class="custom-img"
-        src="https://user-images.githubusercontent.com/71297845/209590362-3e08449f-7f7c-49a6-b69a-9c58c1dc2e21.png"
-        loading="lazy" alt="Image of header file" />
+         src="https://user-images.githubusercontent.com/71297845/209590362-3e08449f-7f7c-49a6-b69a-9c58c1dc2e21.png"
+         loading="lazy" alt="Image of header file"/>
 
     <p></p>
     <hr class="line">
@@ -99,8 +120,8 @@
     </blockquote>
 
     <img class="custom-img"
-        src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" loading="lazy"
-        alt="Image of header file" />
+         src="https://raw.githubusercontent.com/TobinCavanaugh/Pure-C-Strings/master/gitpage/header.png" loading="lazy"
+         alt="Image of header file"/>
 
     <p></p>
 
@@ -130,12 +151,13 @@
     <blockquote>Windows Snake on the desktop:</blockquote>
 
     <img class="custom-img" src="https://github.com/TobinCavanaugh/WindowsSnake/raw/master/desktop.png" loading="lazy"
-        alt="An image of a snake game being played on the desktop" />
+         alt="An image of a snake game being played on the desktop"/>
 
     <blockquote>Windows Snake in front of Clion:</blockquote>
 
-    <img class="custom-img one-by-one" src="https://raw.githubusercontent.com/TobinCavanaugh/WindowsSnake/master/codeimage.png"
-        loading="lazy" alt="An image of a snake game being played over the IDE clion" />
+    <img class="custom-img one-by-one"
+         src="https://raw.githubusercontent.com/TobinCavanaugh/WindowsSnake/master/codeimage.png"
+         loading="lazy" alt="An image of a snake game being played over the IDE clion"/>
 
     <p></p>
     <hr class="line">
@@ -150,7 +172,7 @@
     <h2>
         <!----Git URL -->
         <a href="https://github.com/TobinCavanaugh/Open-Blend-Directory" target="_blank"
-            onclick="playSound('click')">Open Blend Directory</a>
+           onclick="playSound('click')">Open Blend Directory</a>
         <!------------------------Project Name-->
 
     </h2>
@@ -178,16 +200,14 @@
     <blockquote>Open Blend Directory in action:</blockquote>
 
     <img class="custom-img custom-gif"
-        src="https://user-images.githubusercontent.com/71297845/239706698-c150ded9-b676-467e-a1ef-e186d8005d71.gif"
-        loading="lazy" alt="Gif of blender, user presses alt + shift + r and a windows explorer opens" />
+         src="https://user-images.githubusercontent.com/71297845/239706698-c150ded9-b676-467e-a1ef-e186d8005d71.gif"
+         loading="lazy" alt="Gif of blender, user presses alt + shift + r and a windows explorer opens"/>
 
     <p></p>
     <hr class="line">
 </details>
 
-
-
-
+<!--Focal Point-->
 <details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
     <!----------------------------------------Path Here-->
     <summary onmouseover="playSound('hoverclick')">FocalPoint</summary>
@@ -220,8 +240,8 @@
     <p></p>
 
     <img class="custom-img"
-        src="https://github.com/TobinCavanaugh/FocalPoint/raw/main/GithubMarkdown/FocalPointMMGif.gif" loading="lazy"
-        alt="Image of header file" />
+         src="https://github.com/TobinCavanaugh/FocalPoint/raw/main/GithubMarkdown/FocalPointMMGif.gif" loading="lazy"
+         alt="Image of header file"/>
 
 
     <p></p>
@@ -259,7 +279,7 @@
     <blockquote>Windows Snake on the desktop:</blockquote>
 
     <img class="custom-img" src="https://github.com/TobinCavanaugh/WindowsSnake/raw/master/desktop.png" loading="lazy"
-        alt="Image of header file" />
+         alt="Image of header file"/>
 
     <p></p>
     <hr class="line">
