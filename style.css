@@ -56,7 +56,7 @@ body {
 body,
 body * {
     text-shadow: 0px 0px var(--bloomText) var(--amber),
-    0px 0px var(--bloomText) var(--amber);
+        0px 0px var(--bloomText) var(--amber);
 }
 
 /* Scanlines */
@@ -73,8 +73,6 @@ body::after {
     animation: scanlines 10s linear infinite;
 }
 
-
-
 .centerGradient {
     position: fixed;
     top: 0;
@@ -85,6 +83,7 @@ body::after {
 
     background: radial-gradient(circle, rgba(255, 191, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
+
 .noise-layer {
     position: fixed;
     top: -50rem;
@@ -253,16 +252,16 @@ hr {
 
 @-moz-document url-prefix() {
     .custom-gif {
-        filter:blur(1px);
+        filter: blur(1px);
     }
 }
 
 
-.four-by-three{
+.four-by-three {
     aspect-ratio: 4 / 3;
 }
 
-.one-by-one{
+.one-by-one {
     aspect-ratio: 1/1;
 }
 
@@ -282,11 +281,46 @@ hr {
     filter: drop-shadow(0px 0px var(--bloomLine) var(--amber));
 }
 
+strong{
+    font: var(--font);
+    font-size: var(--paraSize);
+}
+
+/*Box around md*/
+#text-container {
+    box-sizing: border-box;
+    width: 100%;
+    border: solid var(--amber) 0.4vh;
+    padding: 5px;
+    box-shadow: 0px 0px var(--bloomLine) var(--amber);
+    width: 80em;
+}
+
+#text-container-title {
+    display: inline-block;
+    margin-left: 5em;
+    margin-right: 5em;
+    padding: 2px;
+}
+
+#text-container-edit {
+    float: left;
+    white-space: pre;
+    padding: 2px;
+}
+
+#text-container-controls {
+    display: inline-block;
+    float: right;
+    padding: 2px;
+}
+
+
+
 .bg-amber-transp {
     background-color: var(--amberTranspImage);
     box-shadow: 0px 0px var(--bloomLine) var(--amber);
 }
-
 
 /* Firefox */
 * {
@@ -337,4 +371,3 @@ hr {
     z-index: -1;
     filter: drop-shadow(0px 0px 5px var(--amber));
 }
-  

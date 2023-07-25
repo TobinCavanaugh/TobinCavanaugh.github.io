@@ -7,13 +7,13 @@ function playSound(s, self = null) {
     var target = event.target;
     test = target.tagName.toLowerCase();
 
-    if(s === 'click' && self != null && !self.open){
+    if (s === 'click' && self != null && !self.open) {
         var altAudio = new Audio("Sounds\\" + "hdd.wav");
         altAudio.volume = .2;
         altAudio.play();
     }
 
-    if(test === 'summary' || test === 'h2'){
+    if (test === 'summary' || test === 'h2') {
         var audio = new Audio("Sounds\\" + s + ".wav");
         audio.play();
 
@@ -45,7 +45,7 @@ function idleHum() {
 }
 
 function toggleIcon(imageElement, path1, path2) {
-    if(audioEnabled){
+    if (audioEnabled) {
         imageElement.src = path1;
         imageElement.alt = path1;
         imageElement.classList.add("bg-amber-transp");
@@ -78,13 +78,24 @@ function wrapTextAfterHeading(text) {
 }
 
 
-function loadMd(textFileURL){
+function loadMd(textFileURL) {
 
-    // Fetch the text file from the URL
+    //Fetch the text file from the URL
     fetch(textFileURL)
         .then(response => response.text())
         .then(text => {
-            // Replace all occurrences of "```" followed by a newline with an empty string
+            //Replace all occurrences of "```" followed by a newline with an empty string
+            //▦
+            text =
+                "<strong id=text-container-edit> &#10762; File  Edit  Selection  Run  Terminal</strong>" +
+                //Program title text
+                "<strong id=text-container-title>ReadMe.md - Text Viewer</strong>" +
+                //Controls on the upper right
+                "<strong id=text-container-controls> - &#9633; x </strong>" +
+                //Seperating line
+                "<hr class=\"line\">" +
+                text;
+
             text = text.replace(/```\n```/g, '<br/>');
 
             text = text.replace(/```/g, "");
@@ -106,7 +117,7 @@ function loadMd(textFileURL){
 
 }
 
-function mdImageToHTML(mdContent){
+function mdImageToHTML(mdContent) {
     // Regular expression to match MD-formatted photos
     const mdPhotoRegex = /!\[.*?\]\((.*?)\)/g;
 
