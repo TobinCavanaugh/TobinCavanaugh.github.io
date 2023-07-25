@@ -92,6 +92,9 @@ function loadMd(textFileURL){
             //text = text.replace('\n\n', '\n');
             text = text.replace(/^\s*[\r\n]/gm, '');
 
+            text = mdImageToHTML(text);
+
+
             var s = wrapTextAfterHeading(text);
             // Insert the text into the text-container div
             document.getElementById('text-container').innerHTML = s;
@@ -101,4 +104,13 @@ function loadMd(textFileURL){
             console.error('Error fetching the text file:', error);
         });
 
+}
+
+function mdImageToHTML(mdContent){
+    // Regular expression to match MD-formatted photos
+    const mdPhotoRegex = /!\[.*?\]\((.*?)\)/g;
+
+    //Replace MD-formatted photos with HTML <img> tags and escape the blockquote
+    const htmlContent = mdContent.replace(mdPhotoRegex, '</blockquote> <img class="custom-img" src="$1" loading="lazy"> <blockquote>');
+    return htmlContent;
 }
