@@ -88,11 +88,15 @@ function loadMd(textFileURL) {
             //▦
             text =
                 //Upper left editor functions and title
-                "<strong id=text-container-edit> &#10762; File  Edit  Selection  Run  Terminal</strong>" +
+                // &#10762;
+                "<strong id=text-container-edit>" +
+                //Text file icon
+                " <i class=\"fa fa-file-text-o\" style=\"font-size:24px\"></i>" +
+                "  File  Edit  Selection  Run  Terminal</strong>" +
                 //Program title text
                 "<strong id=text-container-title>ReadMe.md - Text Viewer</strong>" +
                 //Controls on the upper right
-                "<strong id=text-container-controls> - &#9633; x </strong>" +
+                "<strong id=text-container-controls>  -  &#9633;  x </strong>" +
                 //Seperating line
                 "<hr class=\"line\">" +
                 text;

@@ -171,10 +171,11 @@ a::after {
     white-space: pre;
     font-size: 0.8em;
     content: "   \f2f5";
-    /* Use the appropriate Font Awesome icon code */
     font-family: "Font Awesome 5 Free";
-    /* Specify the Font Awesome font family */
-    /* white-space: pre; Preserve white space, including tabs */
+}
+
+i{
+    display: inline-block;
 }
 
 .line {
@@ -336,6 +337,7 @@ strong {
     display: inline-block;
     float: right;
     padding: 2px;
+    white-space: pre;
 }
 
 
