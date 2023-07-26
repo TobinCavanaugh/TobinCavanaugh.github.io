@@ -92,6 +92,7 @@ function loadMd(textFileURL) {
                 "<strong id=text-container-edit>" +
                 //Text file icon
                 " <i class=\"fa fa-file-text-o\" style=\"font-size:24px\"></i>" +
+                //Edit file context text
                 "  File  Edit  Selection  Run  Terminal</strong>" +
                 //Program title text
                 "<strong id=text-container-title>ReadMe.md - Text Viewer</strong>" +
@@ -135,12 +136,12 @@ function mdImageToHTML(mdContent) {
 }
 
 
-
 //TODO set up custom color picker
 
 
 //Get the root element
 var r = document.querySelector(':root');
+
 function myFunction_set() {
     r.style.setProperty('--amber', 'lightblue');
 }
