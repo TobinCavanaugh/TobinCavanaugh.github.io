@@ -87,6 +87,7 @@ function loadMd(textFileURL) {
             //Replace all occurrences of "```" followed by a newline with an empty string
             //▦
             text =
+                //Upper left editor functions and title
                 "<strong id=text-container-edit> &#10762; File  Edit  Selection  Run  Terminal</strong>" +
                 //Program title text
                 "<strong id=text-container-title>ReadMe.md - Text Viewer</strong>" +
@@ -119,9 +120,12 @@ function loadMd(textFileURL) {
 
 function mdImageToHTML(mdContent) {
     // Regular expression to match MD-formatted photos
-    const mdPhotoRegex = /!\[.*?\]\((.*?)\)/g;
+    const mdPhotoRegex = /!\[(.*?)\]\((.*?)\)/g;
 
-    //Replace MD-formatted photos with HTML <img> tags and escape the blockquote
-    const htmlContent = mdContent.replace(mdPhotoRegex, '</blockquote> <img class="custom-img" src="$1" loading="lazy"> <blockquote>');
+    // Replace MD-formatted photos with HTML <img> tags and escape the blockquote
+    const htmlContent = mdContent.replace(mdPhotoRegex, (match, altText, imagePath) => {
+        return `</blockquote> <img class="custom-img" src="${imagePath}" alt="${altText}" loading="lazy"> <blockquote>`;
+    });
+
     return htmlContent;
 }

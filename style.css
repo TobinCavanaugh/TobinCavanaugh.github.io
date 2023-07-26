@@ -102,7 +102,8 @@ body::after {
 
 
 .screen-door {
-    background-image: url("ScreenDoor/ScreenOverlayRound.png");
+    background-image: url("ScreenDoor/ScreenCirclesPacked.png");
+    filter: blur(.5px);
     position: fixed;
     top: 0;
     left: 0;
@@ -112,9 +113,9 @@ body::after {
     height: 100%;
     pointer-events: none;
     visibility: visible;
-    opacity: .1;
+    opacity: .05;
     background-repeat: repeat;
-    background-size: 50px;
+    background-size: 40px;
     z-index: 100;
 }
 
