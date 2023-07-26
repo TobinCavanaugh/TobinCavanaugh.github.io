@@ -129,3 +129,14 @@ function mdImageToHTML(mdContent) {
 
     return htmlContent;
 }
+
+
+
+//TODO set up custom color picker
+
+
+//Get the root element
+var r = document.querySelector(':root');
+function myFunction_set() {
+    r.style.setProperty('--amber', 'lightblue');
+}

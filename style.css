@@ -48,6 +48,7 @@ body {
     font-family: var(--font);
 }
 
+/*text selection*/
 ::selection {
     background-color: var(--amber);
     color: black;
@@ -69,6 +70,8 @@ body::after {
     height: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .15) 4px, transparent 5px, transparent 7px, rgba(0, 0, 0, .15) 8px);
     background-size: 100% 8px;
+
+    z-index: 200;
     pointer-events: none;
     animation: scanlines 10s linear infinite;
 }
@@ -116,7 +119,7 @@ body::after {
     opacity: .05;
     background-repeat: repeat;
     background-size: 40px;
-    z-index: 100;
+    z-index: 2;
 }
 
 
