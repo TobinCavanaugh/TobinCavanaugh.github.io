@@ -66,7 +66,7 @@ body {
 body,
 body * {
     text-shadow: 0px 0px var(--bloomText) var(--amber),
-    0px 0px var(--bloomText) var(--amber);
+        0px 0px var(--bloomText) var(--amber);
 }
 
 /* Scanlines */
@@ -84,6 +84,66 @@ body::after {
     pointer-events: none;
     animation: scanlines 10s linear infinite;
 }
+
+.splashscreen-bg {
+    /* Full viewport width and height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+    z-index: 1;
+    animation: IBM_FadeOut 3s steps(33) forwards 3s;
+
+}
+
+.splashscreen {
+    /* Full viewport width and height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /* Background properties */
+    background-image: url('Blend/IBM Text/splash.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    /* Adjust the value to control the size of the background image */
+    background-position: center;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 6;
+
+    filter: drop-shadow(0px 0px var(--bloomText) var(--amber));
+
+    animation: IBM_Flyout 2s steps(33) forwards 2s;
+}
+
+@keyframes IBM_FadeOut {
+    0%{
+        opacity: 100%;
+    }
+
+    75%{
+        pointer-events: none;
+    }
+    
+    100%{
+        opacity: 0%;
+    }
+}
+
+@keyframes IBM_Flyout {
+
+    100% {
+        transform: translate(0, -100%);
+    }
+}
+
+
 
 /* Center Gradient Glow*/
 .centerGradient {
@@ -112,6 +172,7 @@ body::after {
     visibility: visible;
     pointer-events: none;
     scale: 500%;
+    z-index: 4;
 }
 
 
@@ -130,7 +191,7 @@ body::after {
     opacity: .05;
     background-repeat: repeat;
     background-size: 40px;
-    z-index: 2;
+    z-index: 6;
 }
 
 
@@ -185,7 +246,7 @@ a::after {
     font-family: "Font Awesome 5 Free";
 }
 
-i{
+i {
     display: inline-block;
 }
 
