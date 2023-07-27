@@ -10,19 +10,30 @@
 
 
 :root {
+    /*Left indent*/
     --indent: 5vw;
-    --font: 'Modern DOS', monospace;
-    --amber: #ffbf00;
-    --amberTransp: rgba(255, 191, 0, .4);
-    --amberTranspImage: rgba(255, 191, 0, .2);
-    --amberTranspBorder: rgba(255, 191, 0, .7);
-    --bloomOff: 4mm;
-    --bloomAmt: 30mm;
 
+    /*Universal font*/
+    --font: monospace;
+
+    /*Amber Colors Main*/
+    --amber: rgb(255, 191, 0);
+    --amberTransp: rgba(255, 191, 0, .4);
+
+    /*Border around image*/
+    --amberTranspImage: rgba(255, 191, 0, .2);
+
+    /*Center Glow Amber*/
+    --amberCenterGlow: rgba(255, 191, 0, 0.2);
+    --amberCenterGlowEdges: rgba(0, 0, 0, .1);
+
+    /*Path Prefix*/
     --path: "C:\\Portfolio\\";
 
+    /*Image scale, ~50rem is normal*/
     --imageScale: 50rem;
 
+    /*Bloom particular glows*/
     --bloomLine: 4vh;
     --bloomText: 4vh;
 
@@ -31,13 +42,11 @@
     /*Actual Header*/
     --headerSize: 8rem;
 
-    /**/
+    /*Font sizes for stuff*/
     --listSize: 3rem;
     --subHeaderSize: 2.5rem;
     --subtitleSize: 1.8rem;
     --paraSize: 1.5rem;
-
-    /*Courier New*/
 }
 
 body {
@@ -76,6 +85,7 @@ body::after {
     animation: scanlines 10s linear infinite;
 }
 
+/* Center Gradient Glow*/
 .centerGradient {
     position: fixed;
     top: 0;
@@ -84,7 +94,7 @@ body::after {
     height: 100%;
     z-index: 200;
 
-    background: radial-gradient(circle, rgba(255, 191, 0, 0.2) 0%, rgba(0, 0, 0, .1) 120%);
+    background: radial-gradient(circle, var(--amberCenterGlow) 0%, var(--amberCenterGlowEdges) 120%);
     pointer-events: none;
 }
 
@@ -184,6 +194,13 @@ i{
     border-top: 0.4vh solid var(--amber);
 }
 
+.line-slightly-wider {
+    border: none;
+    border-top: 0.4vh solid var(--amber);
+    transform: scaleX(101%);
+}
+
+
 
 header {
     list-style: none;
@@ -211,7 +228,7 @@ details {
 }
 
 details[open] summary::before {
-    content: "[V] " var(--path);
+    content: "[v] " var(--path);
     white-space: pre;
 }
 
@@ -314,12 +331,11 @@ strong {
 /*Box around md*/
 #text-container {
     box-sizing: border-box;
-    width: 100%;
-    border: solid var(--amber) 0.4vh;
     padding: 5px;
     box-shadow: 0px 0px var(--bloomLine) var(--amber);
-    width: 80em;
+    width: 100em;
     margin-left: var(--indent);
+    border: solid var(--amber) 0.4vh;
 }
 
 #text-container-title {

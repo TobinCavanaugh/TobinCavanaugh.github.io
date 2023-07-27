@@ -99,7 +99,7 @@ function loadMd(textFileURL) {
                 //Controls on the upper right
                 "<strong id=text-container-controls>  -  &#9633;  x </strong>" +
                 //Seperating line
-                "<hr class=\"line\">" +
+                "<hr class=\"line-slightly-wider\">" +
                 text;
 
             text = text.replace(/```\n```/g, '<br/>');
