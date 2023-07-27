@@ -85,6 +85,7 @@ body::after {
     animation: scanlines 10s linear infinite;
 }
 
+
 .splashscreen-bg {
     /* Full viewport width and height */
     position: fixed;
@@ -107,8 +108,16 @@ body::after {
     width: 100vw;
     height: 100vh;
 
-    /* Background properties */
-    background-image: url('Blend/IBM Text/splash.png');
+    /* Background properties
+    background-image: image-set(
+        url('Blend/IBM Text/splash_lowestres.png') 0.5x,
+        url('Blend/IBM Text/splash_lowres.png') 1x,
+        url('Blend/IBM Text/splash.png') 2x
+
+    );     */
+
+    background-image: url('Blend/IBM Text/splash_lowestres.png');
+    
     background-repeat: no-repeat;
     background-size: 50%;
     /* Adjust the value to control the size of the background image */
@@ -133,6 +142,7 @@ body::after {
     
     100%{
         opacity: 0%;
+        pointer-events: none;
     }
 }
 
@@ -140,6 +150,7 @@ body::after {
 
     100% {
         transform: translate(0, -100%);
+        pointer-events: none;
     }
 }
 
