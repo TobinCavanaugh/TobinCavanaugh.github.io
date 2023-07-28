@@ -122,7 +122,7 @@ body::after {
 
     filter: drop-shadow(0px 0px var(--bloomText) var(--amber));
 
-    /* animation: IBM_Flyout 2s steps(33) forwards 2s; */
+    animation: IBM_Flyout 2s steps(33) forwards 2s;
 }
 
 @keyframes IBM_FadeOut {
