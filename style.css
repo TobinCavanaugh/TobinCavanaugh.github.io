@@ -110,7 +110,7 @@ body::after {
     width: 100vw;
     height: 100vh;
 
-    background-image: url("Blend/IBM_text/splash.png");
+    background-image: url("Blend/IBM_text/splash_lowestres.png");
 
     background-repeat: no-repeat;
     background-size: 50%;
