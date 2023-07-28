@@ -78,7 +78,7 @@ function wrapTextAfterHeading(text) {
 }
 
 
-function loadMd(textFileURL) {
+function loadMd(textFileURL, id) {
 
     //Fetch the text file from the URL
     fetch(textFileURL)
@@ -100,6 +100,7 @@ function loadMd(textFileURL) {
                 "<strong id=text-container-controls>  -  &#9633;  x </strong>" +
                 //Seperating line
                 "<hr class=\"line-slightly-wider\">" +
+
                 text;
 
             text = text.replace(/```\n```/g, '<br/>');
@@ -114,7 +115,7 @@ function loadMd(textFileURL) {
 
             var s = wrapTextAfterHeading(text);
             // Insert the text into the text-container div
-            document.getElementById('text-container').innerHTML = s;
+            document.getElementById(id).innerHTML = s;
         })
         .catch(error => {
             // Handle any errors that may occur during the fetch
