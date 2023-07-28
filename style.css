@@ -116,7 +116,7 @@ body::after {
 
     );     */
 
-    background-image: url('Blend/IBM Text/splash_lowestres.png');
+    background-image: url("Blend/IBM Text/splash_lowestres.png");
     
     background-repeat: no-repeat;
     background-size: 50%;
@@ -141,7 +141,7 @@ body::after {
     }
     
     100%{
-        opacity: 0%;
+        opacity: 0;
         pointer-events: none;
     }
 }
