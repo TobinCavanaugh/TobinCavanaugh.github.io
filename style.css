@@ -110,7 +110,7 @@ body::after {
     width: 100vw;
     height: 100vh;
 
-    background-image: url("https://github.com/TobinCavanaugh/TobinCavanaugh.github.io/blob/main/Blend/IBM_text/splash_lowestres.png?raw=true");
+    background-image: url("Blend/IBM_text/splash.png");
 
     background-repeat: no-repeat;
     background-size: 50%;
