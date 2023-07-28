@@ -156,7 +156,6 @@ body::after {
     width: 100%;
     height: 100%;
     z-index: 200;
-
     background: radial-gradient(circle, var(--amberCenterGlow) 0%, var(--amberCenterGlowEdges) 120%);
     pointer-events: none;
 }
