@@ -17,7 +17,7 @@
     --indent: 5vw;
 
     /*Universal font*/
-    --font: monospace;
+    --font: system-ui;
 
     /*Amber Colors Main*/
     --amber: rgb(255, 191, 0);
