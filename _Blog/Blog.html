@@ -7,14 +7,31 @@
 <body>
 
 <link rel="stylesheet" href="BlogStyle.css">
-<script src="BlogScript.js"></script>
+
+<script type="module" src="split.js"></script>
+<script type="module" src="BlogScript.js"></script>
 
 <h1>Autoblog</h1>
 
-<h5>The latest research shows that living conditions on Venus aren't actually that bad</h5>
-<hr/>
 
-<span id="DocumentList"></span>
+<div class="split">
+
+    <div id="ListView" class="left">
+        <h5>The latest research shows that living conditions on Venus aren't actually that bad</h5>
+        <hr/>
+
+        <ul id="DocumentList"></ul>
+    </div>
+
+
+    <div id="BlogView" class="right">
+        <header>Blog View</header>
+    </div>
+
+
+</div>
+
+
 
 </body>
 </html>
