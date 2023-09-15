@@ -1,4 +1,4 @@
-import Split from './split.js'
+/* import Split from './split.js' */
 
 const username = "TobinCavanaugh";
 const repoName = "TobinCavanaugh.github.io";
