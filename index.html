@@ -31,6 +31,17 @@
 <img class="top-right-button" onclick="idleHum(); toggleIcon(this, 'Icons/Speaker_Icon.png','Icons/Mute_Icon.png')"
      src="Icons/Mute_Icon.png" width=40em alt="Image of a muted/unmuted speaker">
 
+<!--Github Page-->
+<details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
+
+    <!--Code plays the sound, opens a new tab, then cancels the default events so the details dont expand-->
+    <summary onmouseover="playSound('hoverclick')" onclick="playSound('click'); window.open('https://github.com/TobinCavanaugh?tab=repositories').focus(); event.preventDefault();">Github</summary>
+    <hr class="line">
+
+    <p></p>
+    <hr class="line">
+</details>
+
 <!--About Me-->
 <details onclick="playSound('click', this)" onmouseover="playSound('hoverclick')">
     <!----------------------------------------Path Here-->
@@ -77,7 +88,7 @@
 
     <iframe class="fit-width custom-img" src="https://www.youtube.com/embed/iUdTGgjIk0o"></iframe>
 
-    <blockquote>Windows Snake on the desktop:</blockquote>
+    <blockquote>Some Screenshots:</blockquote>
 
     <img class="custom-img"
          src="https://user-images.githubusercontent.com/71297845/209590366-c0d978cd-6c7e-461f-a8c4-3ef65488694e.png"

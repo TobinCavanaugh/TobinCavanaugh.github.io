@@ -43,13 +43,13 @@
     /*--fontSize: 75mm;*/
 
     /*Actual Header*/
-    --headerSize: 8rem;
+    --headerSize: 5rem;
 
     /*Font sizes for stuff*/
-    --listSize: 3rem;
-    --subHeaderSize: 2.5rem;
-    --subtitleSize: 1.8rem;
-    --paraSize: 1.5rem;
+    --listSize: 2.5rem;
+    --subHeaderSize: 2.3rem;
+    --subtitleSize: 1.6rem;
+    --paraSize: 1.2rem;
 }
 
 body {
