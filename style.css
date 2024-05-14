@@ -1,0 +1,60 @@
+﻿html {
+    --fr: rgb(13, 17, 23);
+    --bq: rgb(30, 39, 52);
+
+    --txt: rgb(230, 237, 243);
+    --link: rgb(68, 147, 248);
+
+    background-color: var(--fr);
+}
+
+body {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+* {
+    color: var(--txt);
+}
+
+a {
+    color: var(--link);
+}
+
+ul {
+    list-style: square;
+}
+
+li {
+    font-size: larger;
+}
+
+blockquote {
+    font-size: medium;
+    background-color: var(--bq);
+    border-color: var(--bq);
+    border-radius: 0.25em;
+    border-width: 2em;
+
+    padding: 1em 1em 1em 1em;
+    margin: 0px 0px 0px 1em;
+
+}
+
+blockquote::before {
+    content: "  > ";
+    white-space: pre;
+    text-indent: 1em;
+}
+
+h1 {
+    font-family: "Laila";
+}
+
+* {
+    font-family: "Averia Serif Libre";
+}
+
+li {
+
+}
