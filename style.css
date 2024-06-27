@@ -24,14 +24,26 @@ html {
     /*background-color: var(--txt);*/
     background: var(--txt);
 
+
     color: var(--fr);
+
 }
 
 h1, h2, h3, h4, h5 {
+    /*background: url('https://farm4.staticflickr.com/3262/3112684900_497293aa3a_m.jpg') no-repeat center center;*/
+    /*background: linear-gradient(to right, darkred, orangered, pink, yellow);*/
+    /*background-size: 100%;*/
+    /*color: transparent;*/
+    /*-webkit-background-clip: text;*/
+    /*background-clip: text;*/
+
     margin: 0px;
 }
 
 header {
+    margin: auto;
+    width: auto;
+
     white-space: normal;
     padding: 1em;
 
@@ -63,8 +75,7 @@ p::before {
 }
 
 body {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    margin: auto;
 
     --border: var(--bq);
     --width: 10px;
